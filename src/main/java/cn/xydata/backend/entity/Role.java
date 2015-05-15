@@ -14,7 +14,7 @@ public class Role implements Serializable{
     private Long id; //编号
     private String role; //角色标识 程序中判断使用,如"admin"
     private String description; //角色描述,UI界面显示使用
-    private List<Long> resourceIds; //拥有的资源
+    private List<Long> resource_ids; //拥有的资源
     private Boolean available = Boolean.FALSE; //是否可用,如果不可用将不会添加给用户
     
     public Role() {
@@ -50,12 +50,14 @@ public class Role implements Serializable{
 		this.description = description;
 	}
 
-	public List<Long> getResourceIds() {
-		return resourceIds;
+    
+
+	public List<Long> getResource_ids() {
+		return resource_ids;
 	}
 
-	public void setResourceIds(List<Long> resourceIds) {
-		this.resourceIds = resourceIds;
+	public void setResource_ids(List<Long> resource_ids) {
+		this.resource_ids = resource_ids;
 	}
 
 	public Boolean getAvailable() {
@@ -89,7 +91,7 @@ public class Role implements Serializable{
                 "id=" + id +
                 ", role='" + role + '\'' +
                 ", description='" + description + '\'' +
-                ", resourceIds=" + resourceIds +
+                ", resourceIds=" + resource_ids +
                 ", available=" + available +
                 '}';
     }

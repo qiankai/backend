@@ -21,24 +21,36 @@ public class RoleTest {
         @SuppressWarnings("resource")
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"classpath:conf/spring.xml"
                 ,"classpath:conf/spring-mybatis.xml"});
-        roleService = (RoleService) context.getBean("RoleServiceImpl");
+        roleService = (RoleService) context.getBean("roleServiceImpl");
     }
     
-  @Test
-  public void addUser(){
-	  
-	  List<Long> resourceIds = new ArrayList<Long>();
-	  resourceIds.add((long)10);
-	  resourceIds.add((long)20);
-	  resourceIds.add((long)30);
-	  
-	  Role role = new Role();
-	  role.setRole("helo");
-	  role.setDescription("bbs");
-	  role.setResourceIds(resourceIds);
-	  role.setAvailable(true);
-	  System.out.println(role);
-	  //roleService.createRole(role);
-  }
+//  @Test
+//  public void addRole(){
+//	  
+//	  List<Long> resourceIds = new ArrayList<Long>();
+//	  resourceIds.add((long)10);
+//	  resourceIds.add((long)20);
+//	  resourceIds.add((long)30);
+//	  
+//	  Role role = new Role();
+//	  role.setRole("helobbc");
+//	  role.setDescription("bbsdfsdfs");
+//	  role.setResource_ids(resourceIds);
+//	  role.setAvailable(true);
+//	  System.out.println(role);
+//	  roleService.createRole(role);
+//  }
+  
+    @Test
+    public void findAll(){
+    	List<Role> roles;
+	    roles = roleService.findAll();
+	    System.out.println(roles);
+	    
+	    System.out.println(roleService.findRoles(new Long[]{(long)1,(long)2,(long)3}));
+	    
+	    
+	}
+
 
 }

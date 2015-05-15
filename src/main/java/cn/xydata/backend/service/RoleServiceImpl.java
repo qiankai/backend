@@ -1,5 +1,6 @@
 package cn.xydata.backend.service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -20,28 +21,30 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 	public Integer updateRole(Role role) {
-		// TODO Auto-generated method stub
-		return null;
+		return roleDao.updateRole(role);
 	}
 
 	public Integer deleteRole(Long roleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return roleDao.deleteRole(roleId);
 	}
 
 	public Role findOne(Long roleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return roleDao.findOne(roleId);
 	}
 
 	public List<Role> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return roleDao.findAll();
 	}
 
 	public Set<String> findRoles(Long... roleIds) {
-		// TODO Auto-generated method stub
-		return null;
+	     Set<String> roles = new HashSet<String>();
+	        for(Long roleId : roleIds) {
+	            Role role = findOne(roleId);
+	            if(role != null) {
+	                roles.add(role.getRole());
+	            }
+	        }
+	        return roles;
 	}
 
 	public Set<String> findPermissions(Long[] roleIds) {

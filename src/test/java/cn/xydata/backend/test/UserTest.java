@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataIntegrityViolationException;
 
-import com.fr.form.ui.Password;
 
 import cn.xydata.backend.entity.User;
 import cn.xydata.backend.service.UserService;
@@ -59,47 +58,47 @@ public class UserTest {
 //	  user = userService.findByUsername("helloa");
 //	  System.out.println(user);
 //  }
-  
-  @Test
-  public void findAll(){
-	  List<User> users;
-	  users = userService.findAll();
-	  System.out.println(users);
-  }
-  
-  @Test
-  public void findOne(){
-	  User user_1 = new User();
-	  User user_2 = new User();
-	  user_1 = userService.findByUsername("helloa");
-	  if(user_1 == null ){
-		  System.out.println("none!");
-	  }
-	  else{
-		  user_2 = userService.findOne(user_1.getId());
-		  System.out.println(user_2);
-	  }
-  }
-  
-  @Test
-  public void deleteUser(){
-	  User user_1 = new User();
-	  user_1 = userService.findByUsername("helloa");
-	  if(user_1 == null){
-		  System.out.println("none!");
-	  }
-	  else{
-		  System.out.println(userService.deleteUser(user_1.getId()));
-	  }
-  }
-  
-  @Test
-  public void changePassword(){
-	  User user_1 = new User();
-	  user_1 = userService.findByUsername("hello");
-	  userService.changePassword(user_1.getId(), "helloworld");
-  }
-  
+//  
+//  @Test
+//  public void findAll(){
+//	  List<User> users;
+//	  users = userService.findAll();
+//	  System.out.println(users);
+//  }
+//  
+//  @Test
+//  public void findOne(){
+//	  User user_1 = new User();
+//	  User user_2 = new User();
+//	  user_1 = userService.findByUsername("helloa");
+//	  if(user_1 == null ){
+//		  System.out.println("none!");
+//	  }
+//	  else{
+//		  user_2 = userService.findOne(user_1.getId());
+//		  System.out.println(user_2);
+//	  }
+//  }
+//  
+//  @Test
+//  public void deleteUser(){
+//	  User user_1 = new User();
+//	  user_1 = userService.findByUsername("helloa");
+//	  if(user_1 == null){
+//		  System.out.println("none!");
+//	  }
+//	  else{
+//		  System.out.println(userService.deleteUser(user_1.getId()));
+//	  }
+//  }
+//  
+//  @Test
+//  public void changePassword(){
+//	  User user_1 = new User();
+//	  user_1 = userService.findByUsername("hello");
+//	  userService.changePassword(user_1.getId(), "helloworld");
+//  }
+//  
   
   
 

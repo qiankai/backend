@@ -13,8 +13,8 @@ import cn.xydata.backend.entity.Role;
 public interface RoleDao {
 	
     public Integer createRole(Role role);
-    public Role updateRole(Role role);
-    public void deleteRole(Long roleId);
+    public Integer updateRole(Role role);
+    public Integer deleteRole(Long roleId);
 
     public Role findOne(Long roleId);
     public List<Role> findAll();

@@ -4,14 +4,27 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.xydata.backend.dao.RoleDao">
 
-   <insert id="createRole" parameterType="cn.xydata.backend.entity.Role" keyProperty="id">
+   <insert id="createRole" parameterType="Role" keyProperty="id">
    insert into sys_role( 
-         role, description, resourceIds, available)
+         role, description, available)
      values(
-         #{role},#{description},#{resourceIds},#{available})
+         #{role},#{description},#{available})
    </insert>
    
-
+   <update id="updateRole" parameterType="Role">
+    UPDATE sys_role SET role = #{role},description = #{description},available=#{available} WHERE id = #{id}
+   </update>
    
-          
+   <delete id="deleteRole" parameterType="Long">
+    DELETE FROM sys_role WHERE id=#{roleId}
+   </delete>
+   
+   <select id="findOne" parameterType="Long" resultType="Role">
+   SELECT * FROM sys_role WHERE id=#{roleId}
+   </select>
+   
+   <select id="findAll" resultType="Role">
+   SELECT * FROM sys_role
+   </select>
+   
 </mapper>
