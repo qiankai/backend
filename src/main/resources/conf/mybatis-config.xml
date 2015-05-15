@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         <!-- 命名空间 -->
     <typeAliases>
          <typeAlias alias="User" type="cn.xydata.backend.entity.User"/>
+         <typeAlias alias="Role" type="cn.xydata.backend.entity.Role"/>
     </typeAliases>
  
     <!-- 映射map -->
