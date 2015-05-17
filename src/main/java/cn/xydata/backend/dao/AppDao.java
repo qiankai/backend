@@ -12,9 +12,9 @@ import cn.xydata.backend.entity.App;
  */
 public interface AppDao {
 	
-	public App createApp(App app);
-	public App updateApp(App app);
-	public void deleteApp(Long appId);
+	public Integer createApp(App app);
+	public Integer updateApp(App app);
+	public Integer deleteApp(Long appId);
 	public App findOne(Long appId);
 	public List<App> findAll();
 	Long findAppIdByAppKey(String appKey);

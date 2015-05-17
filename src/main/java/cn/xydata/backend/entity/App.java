@@ -11,8 +11,8 @@ import java.io.Serializable;
 public class App implements Serializable {
     private Long id;
     private String name;
-    private String appKey;
-    private String appSecret;
+    private String appkey;
+    private String appsecret;
     private Boolean available = Boolean.FALSE;
     
     
@@ -28,17 +28,18 @@ public class App implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAppKey() {
-		return appKey;
+
+	public String getAppkey() {
+		return appkey;
 	}
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
+	public void setAppkey(String appkey) {
+		this.appkey = appkey;
 	}
-	public String getAppSecret() {
-		return appSecret;
+	public String getAppsecret() {
+		return appsecret;
 	}
-	public void setAppSecret(String appSecret) {
-		this.appSecret = appSecret;
+	public void setAppsecret(String appsecret) {
+		this.appsecret = appsecret;
 	}
 	public Boolean getAvailable() {
 		return available;
@@ -69,8 +70,8 @@ public class App implements Serializable {
         return "App{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", appKey='" + appKey + '\'' +
-                ", appSecret='" + appSecret + '\'' +
+                ", appKey='" + appkey + '\'' +
+                ", appSecret='" + appsecret + '\'' +
                 ", available=" + available +
                 '}';
     }

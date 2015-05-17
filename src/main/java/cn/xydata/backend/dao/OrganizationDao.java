@@ -2,6 +2,8 @@ package cn.xydata.backend.dao;
 
 import java.util.List;
 
+import org.springframework.dao.IncorrectUpdateSemanticsDataAccessException;
+
 import cn.xydata.backend.entity.Organization;
 
 /**
@@ -12,15 +14,15 @@ import cn.xydata.backend.entity.Organization;
  */
 public interface OrganizationDao {
 	
-    public Organization createOrganization(Organization organization);
-    public Organization updateOrganization(Organization organization);
-    public void deleteOrganization(Long organizationId);
+    public Integer createOrganization(Organization organization);
+    public Integer updateOrganization(Organization organization) throws IncorrectUpdateSemanticsDataAccessException;
+    
+    public Integer deleteOrganizationSon(Long organizationId);
+    public Integer deleteOrganizationParent(Long organizationId);
 
     Organization findOne(Long organizationId);
     List<Organization> findAll();
 
     List<Organization> findAllWithExclude(Organization excludeOraganization);
-
-    void move(Organization source, Organization target);
 
 }
